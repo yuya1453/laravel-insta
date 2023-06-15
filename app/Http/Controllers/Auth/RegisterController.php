@@ -71,17 +71,17 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password'])
         ]);
 
-        $details= [
-            'name'  =>$user->name,
-            'appUrl'=> config('app.url')
-        ];
+        // $details= [
+        //     'name'  =>$user->name,
+        //     'appUrl'=> config('app.url')
+        // ];
 
-        Mail::send('users.emails.register-confirmation', $details, function($message) use ($user){
-            $message
-                ->from(env('MAIL_FROM_ADDRESS'), config('app.name'))
-                ->to($user->email , $user->name)
-                ->subject('Thank you for registering in Kredo IG App!');
-        });
+        // Mail::send('users.emails.register-confirmation', $details, function($message) use ($user){
+        //     $message
+        //         ->from(env('MAIL_FROM_ADDRESS'), config('app.name'))
+        //         ->to($user->email , $user->name)
+        //         ->subject('Thank you for registering in Kredo IG App!');
+        // });
 
         return $user;
     }
