@@ -130,7 +130,7 @@
                                 <a href="{{route('admin.posts.index')}}" class="list-group-item {{request()->is('admin/posts') ? 'active' : ''}}">
                                     <i class="fa-solid fa-newspaper"></i>Posts
                                 </a>
-                                <a href="{{route('admin.categories.index')}}" class="list-group-item {{request()->is('admin/categories') ? 'active' : ''}}">
+                                <a href="{{route('admin.categories')}}" class="list-group-item {{request()->is('admin/categories') ? 'active' : ''}}">
                                     <i class="fa-solid fa-tags"></i>Categories
                                 </a>
                             </div>
