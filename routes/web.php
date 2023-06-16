@@ -10,7 +10,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\FollowController;
 use App\Http\Controllers\Admin\UsersController;
-use App\Http\Controllers\admin\CategoriesController;
+use App\Http\Controllers\Admin\CategoriesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,11 +73,11 @@ Route::group(['middleware'=>'auth'], function(){
         Route::delete('/posts/{id}/hidden', [PostsController::class, 'hidden'])->name('posts.hidden');
         Route::patch('/users/{id}/visible', [PostsController::class, 'visible'])->name('posts.visible');
 
-        //Categories
-        Route::get('/categories', [CategoriesController::class, 'index'])->name('categories.index');
+        //CATEGORIES
+        Route::get('/categories', [CategoriesController::class, 'index'])->name('categories');
         Route::post('/categories/store', [CategoriesController::class, 'store'])->name('categories.store');
-        Route::patch('categories/{id}/update', [CategoriesController::class, 'update'])->name('categories.update');
-        Route::delete('categories/{id}/destroy', [CategoriesController::class, 'destroy'])->name('categories.destroy');
+        Route::patch('/categories/{id}/update', [CategoriesController::class, 'update'])->name('categories.update');
+        Route::delete('/categories/{id}/destroy', [CategoriesController::class, 'destroy'])->name('categories.destroy');
     });
 });
 
